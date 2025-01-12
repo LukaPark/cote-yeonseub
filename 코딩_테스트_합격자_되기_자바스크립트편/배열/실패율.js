@@ -6,10 +6,7 @@
  * 실패율이 높은 스테이지부터 내림차순으로 스테이지의 번호가 담겨 있는 배열을 반환하는 함수.
  */
 function solution(N, stages) {
-    const result = Array.from({ length: N}).map((_,idx) => idx+1);
     const fails = {};
-
-    const length = stages.length;
 
     for (let i = 0; i < N; i++) {
         const targetLength = stages.filter(stage => stage > i).length;
