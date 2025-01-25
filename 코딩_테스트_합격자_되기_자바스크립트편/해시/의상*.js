@@ -52,14 +52,10 @@ function solution(clothes) {
         clothesByCategory[category] = (clothesByCategory[category] || []).concat(name);
     });
 
-    console.log(clothesByCategory);
-
     // 각 카테고리의 조합 수 계산
     const categorySizes = Object.keys(clothesByCategory).map(
         category => clothesByCategory[category].length
     );
-
-    console.log(categorySizes);
 
     // 조합 계산
     const totalCombinations = categorySizes.reduce((acc, size) => acc * (size + 1), 1) - 1;
